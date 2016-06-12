@@ -1,0 +1,254 @@
+/* header */
+.clearfixbefore,
+.clearfixafter {
+  content: "";
+  display: table;
+}
+.clearfixafter {
+  clear: both;
+}
+.header-top {
+  background: rgba(0,47,77,0.3);
+  height: 70px;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 12;
+  box-sizing: border-box;
+}
+/*header end */
+/*typography */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Sans', Arial, sans-serif;
+  color: #fff;
+}
+body {
+  letter-spacing: 0.18em;
+}
+h1 {
+  line-height: 70px;
+  height: 70px;
+}
+h1 a {
+  display: block;
+  padding: 0 10px;
+  font-size: 24px;
+}
+h3 {
+  font-weight: 300;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+#paragraph {
+  font-size: 4vh;
+  color: #fff;
+  text-transform: none !important;
+}
+.project,
+.skill {
+  font-size: 1.5vw;
+}
+.title {
+/* style used for firstSection */
+  font-size: 9vh !important;
+  color: #fff;
+  text-align: left !important;
+  font-weight: bold;
+}
+#title1 {
+  margin-left: 18%;
+}
+#title2 {
+  margin-left: 23%;
+}
+#title3 {
+  margin-left: 28% !important;
+}
+/* typography ends */
+/* section */
+.firstSection {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/HNCK8465.jpg");
+  background-size: cover;
+  text-align: center;
+}
+.secondSection {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/P1000733.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+.thirdSection {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/startup-photos.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #fff !important;
+}
+/* section ends */
+/* interface/layout */
+.columns {
+  position: relative;
+  text-align: center;
+  width: 50vw;
+  vertical-align: middle;
+  display: table-cell;
+}
+.getaquote-button {
+  float: left;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #e74c3c;
+  border-bottom: 5px solid #c0392b;
+  text-shadow: 0px -2px #c0392b;
+/* Animation */
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  margin-left: 5vw;
+  z-index: 2;
+  margin-top: 20px;
+  width: 10vw;
+  height: 6vh;
+  font-size: 1.5vw;
+  border-top: none;
+  border-left: none;
+}
+.getaquote-buttonhover,
+.getaquote-buttonfocus {
+  text-decoration: none;
+  color: #fff;
+}
+.getaquote-buttonactive {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  border-bottom: 1px solid;
+}
+.project>li {
+  display: inline-block;
+  clear: both;
+/*border-style solid !important*/
+  padding: 10px;
+  border-width: thin;
+}
+/* interface/layout ends */
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  border-radius: 25px;
+  height: calc(100% - 120px);
+  margin: auto;
+  margin-top: 5%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.slides {
+  padding: 0;
+  width: 45vh;
+  height: 80vh;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.slides * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.slides input {
+  display: none;
+}
+.slide-container {
+  display: block;
+}
+.slide {
+  top: 0;
+  opacity: 0;
+  width: 45vh;
+  height: 80vh;
+  display: block;
+  transform: scale(0);
+  transition: all 0.7s ease-in-out;
+}
+.slide img {
+  width: 45vh;
+  height: 80vh;
+}
+.slide:hover + .nav label {
+  opacity: 0.5;
+}
+input:checked + .slide-container .slide {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+input:checked + .slide-container .nav label {
+  display: block;
+}
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.6);
+}
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.8);
+}
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0,0,0,0.8);
+}
+.fp-tableCell {
+  height: 80vh !important;
+}
+.bottom>ul>li>a>span {
+  background: #333 !important;
+  bottom: 20px;
+}
