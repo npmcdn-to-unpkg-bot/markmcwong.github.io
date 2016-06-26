@@ -26,7 +26,7 @@
         </h3>
       </section>
       <section class="vertical-scrolling secondSection"><a style="position: relative;font-size: 3.5vmax;padding-left: 5vw;z-index: 2;font-weight:bond;">About me</a>
-        <div class="ui basic modal">
+        <div class="ui basic modal" id="form">
           <div id="form-main">
             <div id="form-div">
               <form class="form" id="form1">
@@ -100,10 +100,10 @@ PHP, Bash, XML, Node.js</a>
       keita.onclick = function() {
         $('.flickity-page-dots').addClass("centered row");
         $('#carousel').modal('show');
-      }
-      getaquote.onclick = function() {
+      };
+      $( "#getaquote" ).click(function() {
         $('#form').modal('show');
-      }
+      });
       var $header_top = $('.header-top');
       var $nav = $('nav');
       $(document).ready(function () {
