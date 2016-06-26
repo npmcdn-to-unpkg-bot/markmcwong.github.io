@@ -58,7 +58,7 @@ or as a part of a team.</h4>
           <source src="video.mp4" type="video/mp4">
           <source src="video.ogg" type="video/ogg">Your browser does not support the video tag.
         </video>
-        <button class="getaquote-button">Get a Quote</button>
+        <button class="getaquote-button" id="getaquote">Get a Quote</button>
       </section>
       <section class="vertical-scrolling thirdSection">
         <div style="width:50vw" class="ui basic modal" id="carousel">
@@ -100,6 +100,9 @@ PHP, Bash, XML, Node.js</a>
       keita.onclick = function() {
         $('.flickity-page-dots').addClass("centered row");
         $('#carousel').modal('show');
+      }
+      getaquote.onclick = function() {
+        $('#form').modal('show');
       }
       var $header_top = $('.header-top');
       var $nav = $('nav');
