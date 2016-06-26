@@ -100,7 +100,9 @@ PHP, Bash, XML, Node.js</a>
     <script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
     <script>
       keita.onclick = function() {
-        $( "<a style='font-size:25px' href='https://markmcwong.github.io/Sample.apk' target='_blank'>Test</a>" ).prependTo( ".flickity-viewport" );
+        if ($( "a" ).hasClass( "dynamic" ) == false){
+        $( "<a class='dynamic' style='font-size:25px' href='https://markmcwong.github.io/Sample.apk' target='_blank'>Test</a>" ).prependTo( ".flickity-viewport" );
+        }
         $('.flickity-page-dots').addClass("centered row");
         $('#carousel').modal('show');
       };
