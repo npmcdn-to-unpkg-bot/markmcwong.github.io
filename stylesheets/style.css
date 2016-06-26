@@ -185,8 +185,7 @@ h3 {
 }
 
 #form-main{
-	width:100%;
-	float:left;
+	width: 50%;
 	padding-top:0px;
 }
 
@@ -197,11 +196,6 @@ h3 {
 	padding-top:35px;
 	padding-bottom:50px;
 	width: 450px;
-	float: left;
-	left: 50%;
-	position: absolute;
-  margin-top:30px;
-	margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
