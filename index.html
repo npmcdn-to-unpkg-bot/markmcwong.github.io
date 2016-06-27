@@ -108,7 +108,7 @@ PHP, Bash, XML, Node.js</a>
         $.ajax({
           type: 'POST',
           dataType: 'json',
-          url: 'https://api.mailgun.net/v3/sandbox37136330f7464a59b1c956fbdd970585.mailgun.org/messages',
+          url: 'https://thingproxy.freeboard.io/fetch/https://api.mailgun.net/v3/sandbox37136330f7464a59b1c956fbdd970585.mailgun.org/messages',
           data : { json: JSON.stringify( jsonData ) },
           success: function(data) {
             console.log(data);
