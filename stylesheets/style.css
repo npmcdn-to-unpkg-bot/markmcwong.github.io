@@ -334,3 +334,6 @@ input:focus, textarea:focus {
 		padding-right: 3%;
 	}
 }
+input {
+	color: rgba(0,0,0,0.9) !important;
+}
