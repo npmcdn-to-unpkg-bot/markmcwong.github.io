@@ -99,22 +99,33 @@ PHP, Bash, XML, Node.js</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
     <script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
     <script>
-      var jsonData = {
-          "from" : "textData1",
-          "to" : "textData2",
-          "text" : "test"
-      };
-      $('#button-blue').click(function(){
-        $.ajax({
-          type: 'POST',
-          dataType: 'json',
-          url: 'https://thingproxy.freeboard.io/fetch/https://api.mailgun.net/v3/sandbox37136330f7464a59b1c956fbdd970585.mailgun.org/messages',
-          data : { json: JSON.stringify( jsonData ) },
-          success: function(data) {
-            console.log(data);
-          }  
-        });
+    $('#button-blue').click(function(){
+      var form = new FormData();
+      form.append("to", "markmcwong@yahoo.com");
+      form.append("from", $('#name').val() + '<' + $('#email').val() + '>');
+      form.append("subject", "New Quote");
+      form.append("text", $('#comment').val());
+      
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.mailgun.net/v3/sandbox37136330f7464a59b1c956fbdd970585.mailgun.org/messages",
+        "method": "POST",
+        "headers": {
+          "authorization": "Basic YXBpOmtleS00NjcxM2IxZTYyYWMzODk3YjI2MWU5ZWE2Njc5NmZiZQ==",
+          "cache-control": "no-cache",
+          "postman-token": "d685f061-c1f8-fad9-b9fd-2eab7d3fa27f"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
       });
+    });
       keita.onclick = function() {
         if ($( "a" ).hasClass( "dynamic" ) == false){
         $( "<a class='dynamic' style='font-size:25px' href='https://markmcwong.github.io/Sample.apk' target='_blank'>Click here to Download the Sample</a>" ).prependTo( ".flickity-viewport" );
