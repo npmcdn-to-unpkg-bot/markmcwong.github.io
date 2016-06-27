@@ -40,7 +40,7 @@
                   <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
                 </p>
                 <div class="ui submit approve button" style="display:block">
-                  <input type="submit" value="SEND" id="button-blue"/>
+                  <input type="button" value="Submit" id="button-blue"/>
                 <div class="ease"></div>
                 </div>
               </form>
@@ -99,6 +99,22 @@ PHP, Bash, XML, Node.js</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
     <script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
     <script>
+      var jsonData = {
+          "from" : "textData1",
+          "to" : "textData2",
+          "text" : "test"
+      };
+      $('.button-blue').click(function(){
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url: 'https://api.mailgun.net/v3/sandbox37136330f7464a59b1c956fbdd970585.mailgun.org/messages',
+          data : { json: JSON.stringify( jsonData ) },
+          success: function(data) {
+            console.log(data);
+          }  
+        });
+      });
       keita.onclick = function() {
         if ($( "a" ).hasClass( "dynamic" ) == false){
         $( "<a class='dynamic' style='font-size:25px' href='https://markmcwong.github.io/Sample.apk' target='_blank'>Click here to Download the Sample</a>" ).prependTo( ".flickity-viewport" );
